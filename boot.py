@@ -1,9 +1,7 @@
 import network
 import led
-import webrepl
 import connectWifi
 
 connectWifi.connect()
-webrepl.start()
-led.blink()
+#webrepl.start()
 led.blink()

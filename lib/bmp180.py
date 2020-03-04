@@ -1,3 +1,5 @@
+
+
 from ustruct import unpack as unp
 from machine import I2C, Pin
 import math
@@ -54,6 +56,7 @@ class BMP180():
         return [self._AC1, self._AC2, self._AC3, self._AC4, self._AC5, self._AC6, 
                 self._B1, self._B2, self._MB, self._MC, self._MD, self.oversample_setting]
 
+
     # gauge raw
     def makegauge(self):
         '''
@@ -62,6 +65,7 @@ class BMP180():
         delays = (5, 8, 14, 25)
         while True:
             self._bmp_i2c.writeto_mem(self._bmp_addr, 0xF4, bytearray([0x2E]))
+
             t_start = time.ticks_ms()
             while (time.ticks_ms() - t_start) <= 5: # 5mS delay
                 yield None
@@ -158,3 +162,4 @@ class BMP180():
         except:
             p = 0.0
         return p
+

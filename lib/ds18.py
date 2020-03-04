@@ -1,3 +1,6 @@
+
+
+
 import machine, onewire, ds18x20, time
 
 ds_pin = machine.Pin(13)
@@ -14,3 +17,5 @@ def ds18Temp():
   if (temp == 85): 
     temp = 0  
   return temp
+
+

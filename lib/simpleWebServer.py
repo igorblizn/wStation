@@ -1,6 +1,9 @@
+
+
+
 import socket 
 import machine
-
+import led
 
 #HTML to send to browsers
 html = """<!DOCTYPE html>
@@ -15,7 +18,7 @@ LED0:
 </form>
 </html>
 """
-
+led.blink()
 #Setup PINS
 LED0 = machine.Pin(4, machine.Pin.OUT)
 
@@ -45,3 +48,6 @@ while True:
     response = html
     conn.send(response)
     conn.close()
+
+
+
